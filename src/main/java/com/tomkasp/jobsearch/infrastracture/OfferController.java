@@ -24,4 +24,9 @@ public class OfferController {
     public void createOffer(@RequestBody Offer offer){
         offerApplicationService.createOffer(offer);
     }
+
+    @GetMapping(value = "/status")
+    public String status(){
+        return "UP";
+    }
 }
