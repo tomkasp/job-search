@@ -1,5 +1,6 @@
 package com.tomkasp.jobsearch.infrastracture;
 
+import com.tomkasp.jobsearch.application.MapsService;
 import com.tomkasp.jobsearch.application.OfferApplicationService;
 import com.tomkasp.jobsearch.domain.Offer;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,11 @@ import java.util.List;
 @RequestMapping(value = "/offers")
 public class OfferController {
 
-    OfferApplicationService offerApplicationService = new OfferApplicationService();
+    private OfferApplicationService offerApplicationService;
+
+    public OfferController() {
+        offerApplicationService = new OfferApplicationService(new MapsService());
+    }
 
     @GetMapping
     public List<Offer> getOffers(){
@@ -25,8 +30,4 @@ public class OfferController {
         offerApplicationService.createOffer(offer);
     }
 
-    @GetMapping(value = "/status")
-    public String status(){
-        return "UP";
-    }
 }
