@@ -3,7 +3,6 @@ package com.tomkasp.jobsearch.domain;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.tomkasp.jobsearch.application.MapsService;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.util.Objects;

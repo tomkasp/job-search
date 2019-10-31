@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(value = "/offers")
 public class OfferController {
 
-    private OfferApplicationService offerApplicationService;
+    private final OfferApplicationService offerApplicationService;
 
     public OfferController() {
         offerApplicationService = new OfferApplicationService(new MapsService());
