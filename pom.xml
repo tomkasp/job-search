@@ -47,6 +47,11 @@
             <artifactId>assertj-core</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.maps</groupId>
+            <artifactId>google-maps-services</artifactId>
+            <version>0.9.4</version>
+        </dependency>
 
 
         <dependency>
