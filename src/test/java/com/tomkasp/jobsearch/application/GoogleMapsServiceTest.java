@@ -1,7 +1,7 @@
 package com.tomkasp.jobsearch.application;
 
 import com.google.maps.model.LatLng;
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,7 +14,7 @@ class GoogleMapsServiceTest {
     private static final String ADDRESS = "krakow";
     final LatLng ADDRESS_COORDINATES = new LatLng(50.06465010, 19.94497990);
 
-    @Ignore
+    @Disabled
     @Test
     public void when_search_for_location_with_address_then_coordinates_are_returned() {
         GoogleMapsService googleMapsService = new GoogleMapsService();
