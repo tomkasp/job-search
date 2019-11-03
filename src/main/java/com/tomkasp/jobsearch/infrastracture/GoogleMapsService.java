@@ -1,10 +1,12 @@
-package com.tomkasp.jobsearch.application;
+package com.tomkasp.jobsearch.infrastracture;
 
 import com.google.maps.GeoApiContext;
 import com.google.maps.PlacesApi;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.LatLng;
 import com.google.maps.model.PlacesSearchResult;
+import com.tomkasp.jobsearch.application.MapCoordinatesFetchOperationFailed;
+import com.tomkasp.jobsearch.application.MapService;
 import io.vavr.collection.Array;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
