@@ -2,6 +2,7 @@ package com.tomkasp.jobsearch.domain;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.google.maps.model.LatLng;
 import com.tomkasp.jobsearch.application.MapsService;
 
 import java.io.Serializable;
@@ -18,7 +19,7 @@ public class Offer implements Serializable {
 
     private final String offerTitle;
     private final String address;
-    private String coordinates;
+    private LatLng coordinates;
 
     public Offer(String offerTitle, String address) {
         this.offerTitle = offerTitle;
@@ -31,7 +32,7 @@ public class Offer implements Serializable {
         }
     }
 
-    public String getCoordinates() {
+    public LatLng getCoordinates() {
         return this.coordinates;
     }
 

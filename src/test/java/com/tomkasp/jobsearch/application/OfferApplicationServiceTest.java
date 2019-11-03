@@ -1,7 +1,7 @@
 package com.tomkasp.jobsearch.application;
 
+import com.google.maps.model.LatLng;
 import com.tomkasp.jobsearch.domain.Offer;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,6 +11,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author Tomasz Kasprzycki
@@ -36,14 +38,14 @@ class OfferApplicationServiceTest {
 
         //then
         List<Offer> offers = offerApplicationService.retrieveAll();
-        Assertions.assertThat(offers).containsExactly(new Offer(OFFER_TITLE, ""));
+        assertThat(offers).containsExactly(new Offer(OFFER_TITLE, ""));
     }
 
     @Test
-    public void when_offer_has_address_then_coordinates_are_added_if_missing() {
+    public void when_offer_has_address_then_coordinates_are_added() {
         //given:
         String address = "broadway street 22";
-        String coordinates = "124";
+        LatLng coordinates = new LatLng(10,20);
         Mockito.when(mapsService.getCoordinatesFor(ArgumentMatchers.anyString())).thenReturn(coordinates);
         Offer offerUnderTest = new Offer("OFFER_TITLE", address);
 
@@ -51,7 +53,7 @@ class OfferApplicationServiceTest {
         offerApplicationService.createOffer(offerUnderTest);
 
         //then
-        Assertions.assertThat(offerUnderTest.getCoordinates()).isEqualTo(coordinates);
+        assertThat(offerUnderTest.getCoordinates().equals(coordinates)).isTrue();
     }
 
 }
