@@ -1,8 +1,8 @@
 package com.tomkasp.jobsearch.infrastracture;
 
-import com.tomkasp.jobsearch.application.GoogleMapsService;
 import com.tomkasp.jobsearch.application.OfferApplicationService;
 import com.tomkasp.jobsearch.domain.Offer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +16,9 @@ public class OfferController {
 
     private final OfferApplicationService offerApplicationService;
 
-    public OfferController() {
-        offerApplicationService = new OfferApplicationService(new GoogleMapsService());
+    @Autowired
+    public OfferController(OfferApplicationService offerApplicationService) {
+        this.offerApplicationService = offerApplicationService;
     }
 
     @GetMapping

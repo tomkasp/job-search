@@ -1,6 +1,7 @@
 package com.tomkasp.jobsearch.application;
 
 import com.google.maps.model.LatLng;
+import com.tomkasp.jobsearch.infrastracture.GoogleMapsService;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
