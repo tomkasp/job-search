@@ -8,15 +8,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author Tomasz Kasprzycki
  */
-class MapsServiceTest {
+class GoogleMapsServiceTest {
 
     private static final String ADDRESS = "krakow";
     final LatLng ADDRESS_COORDINATES = new LatLng(50.06465010, 19.94497990);
 
     @Test
     public void when_search_for_location_with_address_then_coordinates_are_returned() {
-        MapsService mapsService = new MapsService();
+        GoogleMapsService googleMapsService = new GoogleMapsService();
 
-        assertThat(mapsService.getCoordinatesFor(ADDRESS).equals(ADDRESS_COORDINATES));
+        assertThat(googleMapsService.getCoordinatesFor(ADDRESS).equals(ADDRESS_COORDINATES));
     }
 }

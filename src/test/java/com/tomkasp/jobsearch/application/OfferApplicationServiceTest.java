@@ -24,11 +24,11 @@ class OfferApplicationServiceTest {
     private OfferApplicationService offerApplicationService;
 
     @Mock
-    private MapsService mapsService;
+    private GoogleMapsService googleMapsService;
 
     @BeforeEach
     void setUp() {
-        offerApplicationService = new OfferApplicationService(mapsService);
+        offerApplicationService = new OfferApplicationService(googleMapsService);
     }
 
     @Test
@@ -46,7 +46,7 @@ class OfferApplicationServiceTest {
         //given:
         String address = "broadway street 22";
         LatLng coordinates = new LatLng(10,20);
-        Mockito.when(mapsService.getCoordinatesFor(ArgumentMatchers.anyString())).thenReturn(coordinates);
+        Mockito.when(googleMapsService.getCoordinatesFor(ArgumentMatchers.anyString())).thenReturn(coordinates);
         Offer offerUnderTest = new Offer("OFFER_TITLE", address);
 
         //when:

@@ -11,10 +11,10 @@ import java.util.List;
 public class OfferApplicationService {
 
     private final List<Offer> offers = new ArrayList<>();
-    private final MapsService mapsService;
+    private final MapService mapService;
 
-    public OfferApplicationService(MapsService mapsService) {
-        this.mapsService = mapsService;
+    public OfferApplicationService(MapService mapService) {
+        this.mapService = mapService;
     }
 
     public List<Offer> retrieveAll() {
@@ -22,7 +22,7 @@ public class OfferApplicationService {
     }
 
     public void createOffer(Offer offer) {
-        offer.assignCoordinates(mapsService);
+        offer.assignCoordinates(mapService);
         offers.add(offer);
     }
 }
