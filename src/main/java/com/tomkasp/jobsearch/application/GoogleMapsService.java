@@ -24,10 +24,10 @@ public class GoogleMapsService implements MapService {
 
     private final Logger LOG = LoggerFactory.getLogger(GoogleMapsService.class);
 
-    private final String api = "AIzaSyBHT6PPJJulbwLkzpiR8UcNxkjZEG563dM";
     private final GeoApiContext context;
 
     public GoogleMapsService() {
+        String api = "";
         context = new GeoApiContext.Builder()
                 .apiKey(api)
                 .build();
